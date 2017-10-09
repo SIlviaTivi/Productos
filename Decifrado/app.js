@@ -5,7 +5,7 @@ var lon=prompt('digitos a cifrar')
 var letras=lon.toUpperCase()
 
 // creando funcion
-var cipher = function(Cifrar,Position){
+var decipher = function(Cifrar,Position){
 
    //descartando espacios
    // si indexOf escuentra un espacio el valor es diferente de -1 , si se cumple nos da alerta y si no, sigue
@@ -30,7 +30,7 @@ var cipher = function(Cifrar,Position){
      LetArr=[];
        for (var u=0; u<Ci.length; u++){ // ci= cifras que no son numeros
        var CadaLetString= result.charAt(u)// obteniendo los elementos del string
-       var changeLetters= String.fromCharCode((CadaLetString.charCodeAt()-65+PosiFija)%26+65) // formula de cifrado cesar
+       var changeLetters= String.fromCharCode((CadaLetString.charCodeAt()+65-PosiFija)%26+65) // formula de cifrado cesar
            LetArr.push(changeLetters); // introduciendo los elementos al array LetArr
            }
 
@@ -40,4 +40,4 @@ var cipher = function(Cifrar,Position){
        return alert(Juntas);
  }
 
-cipher(lon,PosiFija);
+decipher(lon,PosiFija);
